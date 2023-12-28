@@ -1,4 +1,4 @@
-import math
+from math import *
 
 # ToDo validate is n smaller than m
 # ToDo is gcd()
@@ -18,28 +18,28 @@ def main():
 
     if p is None and q is None:
         (p, q) = factorize(n)
-        print(f"factorized p={p} q={q}")
+        print("factorized p=" + p + " q=" + p)
     elif p is None:
         p = n / q
-        print(f"p={p}")
+        print("p=" + p)
     elif q is None:
         q = n / p
-        print(f"q={q}")
+        print("q=" + q)
 
     if n is None:
         n = p * q
 
     if e is None:
         if d is None:
-            print(f"Error d is None d={d}")
+            print("Error d is None d=" + d)
             exit
         e = wrap_extended_euclaid(d, calc_phi(p, q))
     if d is None:
         if e is None:
-            print(f"Error e is None e={e}")
+            print("Error e is None e=" + e)
             exit
         d = wrap_extended_euclaid(e, calc_phi(p, q))
-    print(f"calc e={e}, d={d}")
+    print("calc e=" + e + ", d=" + d)
 
     if c is None and m is None:
         print("Error c and m is None")
@@ -50,19 +50,20 @@ def main():
     if m is None:
         m = pow(c, d, n)
 
-    print(f"m={m} c={c} e={e} d={d} n={n} p={p} q={q}")
+    print("m=" + m + " c=" + c + " e=" + e + " d=" +
+          d + " n=" + n + " p=" + p + " q= " + q)
 
 
 def factorize(n: int):
-    k = int(math.ceil(math.sqrt(n)))
+    k = int(ceil(sqrt(n)))
     for i in range(1000):
         t = pow(k + i, 2) - n
-        sqr = math.sqrt(t)
-        if sqr == math.floor(sqr):  # check is ganze Zahl
+        sqr = sqrt(t)
+        if sqr == floor(sqr):  # check is ganze Zahl
             p = (k + i) + int(sqr)
             q = (k + i) - int(sqr)
             return (p, q)
-    print(f"Error no factor found for n={n}")
+    print("Error no factor found for n=" + n)
 
 
 def wrap_extended_euclaid(a: int, n: int) -> int:
@@ -74,7 +75,7 @@ def wrap_extended_euclaid(a: int, n: int) -> int:
 
 
 def extended_euclaid(a: int, b: int) -> tuple:
-    assert (math.gcd(a, b) == 1.0)
+    assert (gcd(a, b) == 1.0)
     if a == 0:
         return b, 0, 1
     else:
@@ -88,13 +89,13 @@ def calc_phi(p: int, q: int) -> int:
 
 def val_input(prompt: str):
     inp = input(prompt)
-    if inp.strip() == '':
+    if inp.strip() == "":
         return None
     try:
         number = int(inp)
         return number
     except ValueError:
-        print(f"Error -> {prompt} is a string")
+        print("Error -> " + prompt + "is a string")
 
 
 if __name__ == "__main__":
