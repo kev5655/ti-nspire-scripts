@@ -1,4 +1,4 @@
-from math import *
+from math import sqrt, ceil, floor
 
 # ToDo validate is n smaller than m
 # ToDo is gcd()
@@ -14,6 +14,12 @@ def factorize(n: int):
             q = (k + i) - int(sqr)
             return (p, q)
     print("Error no factor found for n=" + n)
+
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
 
 
 def extended_euclaid(a: int, b: int) -> tuple:
