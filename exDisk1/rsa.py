@@ -8,9 +8,7 @@ from math import sqrt, ceil, floor
 
 def factorize(n: int):
     k = int(ceil(sqrt(n)))
-    print(k)
     for i in range(1000):
-        print(i)
         t = pow(k + i, 2) - n
         sqr = sqrt(t)
         if sqr == floor(sqr):  # check is ganze Zahl
