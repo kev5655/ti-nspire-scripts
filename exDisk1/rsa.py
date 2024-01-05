@@ -3,8 +3,6 @@ from math import sqrt, ceil, floor
 # ToDo validate is n smaller than m
 # ToDo is gcd()
 
-" + str(a) +"
-
 
 def factorize(n: int):
     k = int(ceil(sqrt(n)))
