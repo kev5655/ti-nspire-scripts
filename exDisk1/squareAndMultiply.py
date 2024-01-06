@@ -22,17 +22,24 @@ def squareAndMultiply(c, a, m):
     interimResults = []
     z = c
 
+
+
+    hasPrinted = False
     i = 1
     while i <= result[0]:
         for j in range(len(result) - 1, -1, -1):
+            
             if i == result[j]:
-                if i == 1:
+                    print(str(c),"^",str(i)," mod ",str(m)," = ",str(z % m)," SOLUTION")
+                    hasPrinted = True
                     interimResults.append(z % m)
-                    print(str(c),"^",str(i)," mod ",str(m)," = ",str(z % m))
-                else:
-                    interimResults.append(z % m)
-                    print(str(c),"^",str(i)," mod ",str(m)," = ",str(z % m))
-        i *= 2
+                
+        if(hasPrinted == False):
+            print(str(c),"^",str(i)," mod ",str(m)," = ",str(z % m))
+        
+        else:
+            hasPrinted = False
+        i = i*2
         z = pow(z, 2) % m
        
     endResult = 1
@@ -43,7 +50,15 @@ def squareAndMultiply(c, a, m):
 
 
 print("Square and multiply in the form: a^b mod m")
-a = int(input("Please enter a="))
+print("Please enter a")
+a = int(input())
+print("Please enter b")
+b = int(input())
+print("Please enter m")
+m = int(input())
+print()
+
+print(squareAndMultiply(a,b,m))
 b = int(input("Please enter b="))
 m = int(input("Please enter m="))
 print()
