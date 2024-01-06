@@ -28,7 +28,7 @@ m = int(input())
 
 result = multInverse(a,m)
 
-if result == 1:
+if result == -1:
     print("ggT is not 1")
 
 else:
