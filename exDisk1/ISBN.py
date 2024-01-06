@@ -1,5 +1,6 @@
 def isISBNRight(*numbers):
     if len(numbers) != 10:
+        print("The length of the ISBN is wrong")
         return False
     else:
         total = 0
