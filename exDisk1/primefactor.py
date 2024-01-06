@@ -6,7 +6,6 @@ n = int(input("Enter n="))
 def primefactor(n: int) -> tuple:
     k = int(ceil(sqrt(n)))
     for i in range(1000):
-        print(i)
         t = pow(k + i, 2) - n
         sqr = sqrt(t)
         if sqr == floor(sqr):  # check is ganze Zahl
