@@ -28,10 +28,10 @@ def squareAndMultiply(c, a, m):
             if i == result[j]:
                 if i == 1:
                     interimResults.append(z % m)
-                    print(f"{c}^{i} mod {m} = {z % m}")
+                    print("{c}^{i} mod {m} = {z % m}")
                 else:
                     interimResults.append(z % m)
-                    print(f"{c}^{i} mod {m} = {z % m}")
+                    print("{c}^{i} mod {m} = {z % m}")
         i *= 2
         z = pow(z, 2) % m
        
