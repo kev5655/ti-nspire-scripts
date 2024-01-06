@@ -1,10 +1,13 @@
-def multInverse(a, b):
+# ToDo wofür gilt 48 ≡ 33 (mod m)
+
+def multiInverse(a, b):
     if ggT(a, b) == 1:
         for i in range(b):
             if (a * i) % b == 1:
                 return i
-            
+
     return -1
+
 
 def ggT(a, b):
     r = 1
@@ -20,16 +23,14 @@ def ggT(a, b):
 
 
 print("a*b = 1 mod m")
-print("Please enter a:")
-a = int(input())
+a = int(input("Please enter a="))
 
-print("Please enter m:")
-m = int(input())
+m = int(input("Please enter m="))
 
-result = multInverse(a,m)
+result = multiInverse(a, m)
 
 if result == -1:
     print("ggT is not 1")
 
 else:
-    print("Multiplicative Inverse is :",result)
+    print("Multiplicative Inverse is :", result)

@@ -43,12 +43,9 @@ def squareAndMultiply(c, a, m):
 
 
 print("Square and multiply in the form: a^b mod m")
-print("Please enter a")
-a = int(input())
-print("Please enter b")
-b = int(input())
-print("Please enter m")
-m = int(input())
+a = int(input("Please enter a="))
+b = int(input("Please enter b="))
+m = int(input("Please enter m="))
 print()
 
 print(squareAndMultiply(a,b,m))
