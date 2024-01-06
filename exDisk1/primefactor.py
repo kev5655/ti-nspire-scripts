@@ -17,5 +17,6 @@ for i in range(1000):
         print("--" + str(k + i) + "^2 - " + str(t) + "^2 = " + str(n) + "")
         print("--(" + str(k + i) + " + " + str(floor(sqr)) +
               ") * (" + str(k + i) + " - " + str(floor(sqr)) + ") = " + str(n))
+        break
 if p == None or q == None:
     print("Error no factor found for n=" + str(n))
