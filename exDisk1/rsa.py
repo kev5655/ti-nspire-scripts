@@ -1,8 +1,5 @@
 from math import sqrt, ceil, floor
 
-# ToDo validate is n smaller than m
-# ToDo is gcd()
-
 
 def factorize(n: int):
     k = int(ceil(sqrt(n)))
@@ -97,6 +94,10 @@ print("calc e=" + str(e) + ", d=" + str(d))
 
 if c is None and m is None:
     print("Error c and m is None")
+    exit
+
+if (n > m or n > c):
+    print("Error n is smaller than m or c")
     exit
 
 if c is None:
