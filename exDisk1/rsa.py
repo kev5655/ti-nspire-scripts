@@ -97,10 +97,11 @@ if c is None and m is None:
     exit
 
 if (m is not None):
-    if (n > m):
+    if (n < m):
         print("Error n is smaller than m")
         exit
-    elif (n > c):
+if c is not None:
+    if (n < c):
         print("Error n is smaller than c")
         exit
 
