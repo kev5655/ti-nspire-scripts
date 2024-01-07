@@ -10,17 +10,15 @@ def isISBNRight(numbers):
         return total % 11 == 0
 
 
-def findMissingNumber(*numbers):
+def findMissingNumber(numbers):
     result = []
-    numbers = list(numbers)
     index = 0
     for i in numbers:
-        if (i == "?"):
+        if (i == "x"):
             index = numbers.index(i)
             break
 
     for i in range(0, 10):
-        print(i)
         numbers[index] = i
         numbers = [int(x) for x in numbers]
         if (isISBNRight(numbers)):
@@ -28,11 +26,11 @@ def findMissingNumber(*numbers):
     return result
 
 
-print("Please enter the ISBN z1,z2,z3,z4,z5,z6,?,z8,z9,z10:")
+print("Please enter the ISBN z1,z2,z3,z4,z5,z6,x,z8,z9,z10:")
 isbn_input = input()
 isbn_numbers = list(isbn_input.split(','))
-if "?" in isbn_numbers:
-    n = findMissingNumber(*isbn_numbers)
+if "x" in isbn_numbers:
+    n = findMissingNumber(isbn_numbers)
     print("The missing number is:", n)
 else:
     isbn_numbers = [int(x) for x in isbn_numbers]
