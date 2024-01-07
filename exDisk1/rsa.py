@@ -96,9 +96,14 @@ if c is None and m is None:
     print("Error c and m is None")
     exit
 
-if (n > m or n > c):
-    print("Error n is smaller than m or c")
-    exit
+if (m is not None):
+    if (n > m):
+        print("Error n is smaller than m")
+        exit
+    elif (n > c):
+        print("Error n is smaller than c")
+        exit
+
 
 if c is None:
     c = pow(m, e, n)
