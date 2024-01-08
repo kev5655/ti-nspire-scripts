@@ -59,8 +59,3 @@ m = int(input())
 print()
 
 print(squareAndMultiply(a,b,m))
-b = int(input("Please enter b="))
-m = int(input("Please enter m="))
-print()
-
-print(squareAndMultiply(a,b,m))
