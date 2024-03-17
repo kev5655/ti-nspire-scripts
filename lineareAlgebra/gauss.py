@@ -13,9 +13,10 @@ x = [0 for _ in range(n)]
 print('Enter Augmented Matrix Coefficients:')
 for i in range(n):
     for j in range(n + 1):
-        a[i][j] = float(input(f'a[{i}][{j}]='))
+        a[i][j] = float(input("a[" + str(i) + "][" + str(j) + "]="))
         
 # Applying Gauss Elimination
+print("----")
 for i in range(n):
     if a[i][i] == 0.0:
         sys.exit('Divide by zero detected!')
@@ -26,7 +27,7 @@ for i in range(n):
         for k in range(n + 1):
             a[j][k] -= ratio * a[i][k]
 
-    print("----")
+    
     for line in a:
         print(line)
     print("----")
@@ -45,4 +46,4 @@ for i in range(n - 2, -1, -1):
 # Displaying solution
 print('\nRequired solution is: ')
 for i in range(1, n + 1):
-    print(f'X{i} = {x[i-1]:0.2f}', end='\t')
+    print("X" + str(i) + "= " + str(x[i-1]))
